@@ -1,27 +1,26 @@
 require 'pry'
 
 class CreatingAccount
-  attr_accessor :account
+  attr_accessor :account, :first_name, :last_name, :email, :password
   @account = Hash.new
   def question
     puts "Please enter your first name?"
-    first_name = gets.chomp
+    @first_name = gets.chomp
     puts "Please enter your last name?"
-    last_name = gets.chomp
+    @last_name = gets.chomp
     puts "Please enter a email"
-    email = gets.chomp
+    @email = gets.chomp
     puts "Please enter a password"
-    password = gets.chomp
+    @password = gets.chomp
   end
-  def user_account(first_name, last_name, email, password)
-      question
+  def user_account()
+    question
     @account << first_name
+    binding.pry
   end
 end
 
-user1 = CreatingAccount.new
-user1.question
-
+CreatingAccount.new
 
 # account => {
 #     first_name: [],
